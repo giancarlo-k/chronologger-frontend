@@ -51,7 +51,7 @@ const Signup = () => {
       setErrorMessage(prev => ({...prev, passwordsMatch: true }));
       setErrorMessage(prev => ({...prev, usernameTaken: false }));
       const { username, password } = formData
-      axios.post('https://chronologger-backend-0d366a44ea30.herokuapp.com/users/add', { username, password })
+      axios.post('https://chronologger-backend-0d366a44ea30.herokuapp.com/users/add', { username, password }, { withCredentials: true })
         .then(response => {
           window.location.href = '/dashboard';
         })
